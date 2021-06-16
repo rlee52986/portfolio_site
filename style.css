@@ -1,10 +1,14 @@
 :root {
     --color-primary: #b90504;
     --color-primary-accent: #990100;
-    --color-secondary: #e8e8e8;
-    --color-secondary-accent: #f6f6f6;
+    --color-secondary: #E8E8E8;
+    --color-secondary-accent: #F6F6F6;
     --color-secondary-dark: #333333;
     --font-primary: 'Righteous', cursive;
+}
+
+body {
+    font-family: var(--font-primary);
 }
 
 .icon {
@@ -32,7 +36,6 @@ nav.navbar-bg {
 
 ul.navbar-nav > li.nav-item > a.nav-link.nav-item.nav-item-style {
     color: var(--color-secondary-dark);
-    font-family: var(--font-primary);
     font-size: 1.6rem;
     padding: 0.80rem;
 }
@@ -42,9 +45,10 @@ ul.navbar-nav > li.nav-item > a.nav-link.nav-item.nav-item-style {
     justify-content: flex-end;
 }
 
-.hero {    
-    display: flex;
-    justify-content: center;
+.hero-container {    
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     margin-top: 2rem;
     background: var(--color-primary);
     height: 75vh;
@@ -52,17 +56,31 @@ ul.navbar-nav > li.nav-item > a.nav-link.nav-item.nav-item-style {
     clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 80%);
 }
 
+h1 {
+    grid-column-start: 3;
+    justify-self: center;
+    display: inline;
+    margin-top: 2rem;
+    font-size: 3.5rem;
+    color: var(--color-secondary);
+}
+
+.hero-container > p {
+    color: var(--color-secondary-accent);
+    grid-column-start: 3;
+    grid-row-start: 2;
+    font-size: 2rem;
+    margin-left: 1.5rem;
+}
+
 #ozark {
-    margin-top: 5rem;
+    grid-column-start: 2;
+    grid-row-start: ;
+    justify-self: end;
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     height: 12rem;
     width: 12rem;
     object-fit: cover;
     object-position: top;
-}
-
-h1 {
-    font-family: var(--font-primary);
-    color: var(--color-secondary);
 }
